@@ -13,4 +13,4 @@ services:
     #   - "8000:8000"
     # Uncomment to add environment variables
     env_file:
-      - .env
+      - ai_engineer/.env
