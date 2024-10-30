@@ -29,14 +29,12 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
   await context.bot.send_message(chat_id=update.effective_chat.id,
                                  text=completion_answer.content)
 
-
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
   await context.bot.send_message(chat_id=update.effective_chat.id,
                                  text="I'm a bot, please talk to me!")
-
-if __name__ == '__main__':
+  
+def start_bot() :
   application = ApplicationBuilder().token(tg_bot_token).build()
-
   start_handler = CommandHandler('start', start)
   chat_handler = CommandHandler('chat', chat)
 
@@ -44,3 +42,7 @@ if __name__ == '__main__':
   application.add_handler(chat_handler)
   
   application.run_polling()
+
+
+if __name__ == '__main__':
+  start_bot()

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: python-poetry-app
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Uncomment to expose ports if needed
+    # ports:
+    #   - "8000:8000"
+    # Uncomment to add environment variables
+    env_file:
+      - .env
